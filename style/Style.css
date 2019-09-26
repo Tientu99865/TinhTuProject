@@ -1,0 +1,430 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	font-family: Roboto;
+	font-style: normal;
+}
+a{
+	text-decoration: none;
+	color: #0b566f;
+}
+ul,li{
+	list-style-type: none;
+}
+table, th, td{
+	border-collapse: collapse;
+	border: 2px #e5e5e5 solid;
+	padding: 9px 12px;
+}
+#Header{
+	width: 1345px;
+	height: 144px;
+	background: #465052;
+	position: relative;
+}
+#Header p{
+	position: absolute;
+	font: 13px Roboto;
+	top: 5px;
+	right: 30px;
+	color: white;
+}
+#Header a{
+	float: right;
+}
+#Logo{
+	width: auto;
+	height: auto;
+	float: left;
+	margin-left: 80px;
+}
+#Logo strong{
+	font-size: 20px;
+	color: white;
+}
+#Search{
+	width: 600px;
+	height: 50px;
+	float: left;
+	margin: 50px 0px 0px 150px;
+	background: white;
+}
+#textsearch{
+	width: 500px;
+	height: 50px;
+	float: left;
+	border: 0px;
+	margin-left: 50px;
+	outline: none;
+}
+#search-button{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border: 0px;
+	background: url(Imgs/icon/search.png) no-repeat;
+	text-align: center;
+	outline: none;
+	margin-top: 10px;
+	cursor: pointer;
+}
+#cart{
+	float: left;
+	margin: 50px 0px 0px 150px;
+}
+#cart img{
+	cursor: pointer;
+}
+#cart strong{
+	float: left;
+	color: white;
+	margin: 15px ;
+}
+#menu{
+	width: 1345px;
+	height: 83px;
+	margin:10px 0px 20px 0px;
+}
+#menu-detal{
+	width: 1200px;
+	height: auto;
+	margin: auto;
+	overflow: hidden;
+}
+#menu-detal ul li{
+	float: left;
+	text-align: center;
+	margin: 20px 30px 0px 30px;
+	border: 2px #0b566f solid;
+	width: 170px;
+	height: 35px;
+	padding-top: 10px;
+	font-size: 20px;
+	border-radius: 25px;
+}
+#menu-detal ul li:hover{
+	background: #149DCC;
+	color: white;
+}
+.slideshow-container{
+	margin-left: 90px;
+}
+#main-wrapper{
+	width: 1170px;
+	height: auto;
+	margin: auto;
+}
+.produces{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-bottom: 100px;
+}
+.produces h1{
+	font:36px Roboto;
+	text-align: center;
+	margin-top: 10px;
+	color: #6e7474;
+}
+.produces ul li{
+	float: left;
+	margin: 30px 20px 10px 10px;
+}
+.produce-info{
+	width: 260px;
+	height: auto;
+	border: 1px #eee9e9 solid;
+	overflow: hidden;
+	position: relative;
+}
+.produce-info img:hover{
+	cursor: pointer;
+
+}
+.produce-info a p{
+	width: 100px;
+	height: 28px;
+	padding-top: 5px;
+	background: #4B4F4D;
+	margin: auto;
+	color: white;
+	border-radius: 15px;
+}
+.produce-info a p:hover{
+	background: #00ADF1;
+	color: white;
+}
+.produce-info p{
+	width: 260px;
+	height: 30px;
+	text-align: center;
+	font: 17px Roboto;
+	border-bottom: 1px #eee9e9 solid;
+}
+.produce-info a:hover{
+	color: red;
+}
+.produce-info span p{
+	width: 260px;
+	height: 30px;
+	text-align: center;
+	font: 22px Roboto;
+	color: red;
+}
+
+#footer{
+	width: 1345px;
+	height: 100px;
+	background: #151e27;
+	overflow: hidden;
+}
+#footer p{
+	float: left;
+	font: 17px Roboto;
+	color: white;
+	margin: 40px 0px 0px 100px;
+}
+#footer ul li{
+	float: right;
+	margin: 40px 20px 0px 0px;
+	color: white;
+}
+/*End the CSS seation of the Index.html*/
+
+/*start - contact*/
+#main-contact{
+	width: 1170px;
+	height: auto;
+	margin: auto;
+}
+#main-contact h1{
+	font:36px Roboto;
+	text-align: center;
+	margin-top: 10px;
+	color: #6e7474;
+}
+#main-contact ul li{
+	float: left;
+	margin: 50px 90px 50px 60px;
+}
+/*End the CSS seation of the contact.html*/
+
+/*start - newshoes*/
+#produces-wp{
+	width: 100%;
+	height: auto;
+	margin: 50px 0px 50px 0px;
+	overflow: hidden;
+}
+#produce-sidebar-a{
+	width: 280px;
+	height: 500px;
+	float: left;
+}
+#produce-sidebar-a h1{
+	font: 24px Roboto;
+	color: #2F383D;
+	border-bottom: 1px #eee9e9 solid;
+}
+#txtsearch{
+	width: 270px;
+	height: 35px;
+	margin: 10px 0px 0px 5px;
+}
+.range{
+	width: 100%;
+	margin: 20px 0px 20px 0px;
+}
+.slider {
+	-webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #00ADF1;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #2F383D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #2F383D;
+  cursor: pointer;
+}
+.submit{
+	width: 43px;
+	height: 34px;
+	background: #00ADF1;
+	border: 0px;
+	color: white;
+	margin-left: 20px;
+	cursor: pointer;
+}
+#produce-sidebar-b{
+	width: 870px;
+	height: auto;
+	float: right;
+	overflow: hidden;
+}
+#produce-sidebar-b h1{
+	font: 25px Roboto;
+	float: left;
+	color: #2F383D;
+	margin-left: 20px;
+
+}
+#sort{
+	width: 236px;
+	height: 35px;
+	font: 14px Roboto;
+	padding: 7px;
+	float: right;
+	color: #333333;
+}  
+ #produce-sidebar-b ul li{
+ 	float: left;
+ 	margin: 0px 0px 10px 20px;
+ }
+ #produce-sidebar-in-b{
+ 	width: 100%;
+ 	height: auto;
+ 	margin-top: 50px;
+ }
+
+/*End the CSS seation of the newshoes.html*/
+
+/*start-sale*/
+.produce-info h3{
+	font: 17px Roboto;
+	padding: 5px;
+	position: absolute;
+	width: 70px;
+	height: 26px;
+	background: yellow;
+	color: red;
+	top: 0px;
+	right: 0px;
+}
+.produce-info span span{
+	float: left;
+	text-decoration: line-through;
+	font: 22px Roboto;
+	color: #6E7474;
+}
+
+/*End the css setion of the sale.html*/
+
+/*start - viewall*/
+
+#allproduces {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+
+#allproduces ul li{
+	width: auto;
+	height: auto;
+	float: left;
+	margin: 30px 20px 10px 10px;
+
+}
+
+/*End the css setion of the viewall.html*/
+
+/*start - cart*/
+
+#cart-wp{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin:50px 0px 50px 0px;
+}
+#cart-wp table{
+	float: left;
+	width: 100%;
+	height: auto;
+	text-align: center; 
+	
+}
+#color{
+	width: auto;
+	height: 33px;
+}
+#size{
+	width: auto;
+	height: 33px;
+}
+#sm_pay{
+	width: 123px;
+	height: 52px;
+	float: right;
+	text-align: center;
+	background: #00ADF1;
+	color: white;
+	border: 0px;
+	margin: 15px ;
+	cursor: pointer;
+}
+/*End the css setion of the cart.html*/
+
+/*start - pay*/
+
+#pay-wp{
+	width: 100%;
+	height: auto;
+	margin: 50px 0px 50px 0px;
+	overflow: hidden;
+}
+#pay-a{
+	width: 570px;
+	height: auto;
+	float: left;
+}
+#pay-a h3{
+	width: 100%;
+	height: 37px;
+	border-bottom: 1px solid black;
+	padding:10px 0px 0px 5px;
+	background: #465052;
+	color: white;
+}
+#pay-b{
+	width: 570px;
+	height: auto;
+	float: right;
+}
+#pay-b h3{
+	width: 100%;
+	height: 37px;
+	border-bottom: 1px solid black;
+	padding:10px 0px 0px 5px;
+	background: #465052;
+	color: white;
+	margin-bottom: 47px;
+}
+#pay-b table{
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
