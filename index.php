@@ -1,6 +1,7 @@
 <?php
 
 	// test
+	// test2
     include 'includes/header.php';
 
     include 'includes/menu.php';
