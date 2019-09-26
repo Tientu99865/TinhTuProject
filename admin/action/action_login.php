@@ -8,7 +8,7 @@ $msg= '';
 $suc= '';
 if ($_SERVER['REQUEST_METHOD']=='POST'){
     $errors = array();
-    if (isset($_POST['account']) && filter_var($_POST['account'],FILTER_VALIDATE_DOMAIN)){
+    if (isset($_POST['account']) && filter_var($_POST['account'],FILTER_VALIDATE_EMAIL)){
         $account = mysqli_real_escape_string($dbc,$_POST['account']);
     }else{
         $errors[] = 'Làm ơn điền tài khoản';
