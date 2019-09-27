@@ -1,5 +1,4 @@
-<?php include ('../includes/mysqli_connect.php');?>
-<?php include ('../includes/functions.php');
+<?php
 if (isset($_GET['msg'])){
     $msg = $_GET['msg'];
 }else{
@@ -10,7 +9,7 @@ if (isset($_GET['msg'])){
 <html lang="en">
 
 <head>
-    <!-- Original URL: http://www.urbanui.com/serein/template/demo/vertical-default-light/pages/samples/login-2.html
+    <!-- Original URL: http://www.urbanui.com/serein/template/demo/vertical-default-light/pages/samples/register-2.html
     Date Downloaded: 11/30/2018 1:56:42 PM !-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Required meta tags -->
@@ -37,7 +36,6 @@ if (isset($_GET['msg'])){
             <div class="row flex-grow">
                 <div class="col-lg-6 d-flex align-items-center justify-content-center">
                     <div class="auth-form-transparent text-left p-3">
-
                         <?php
                         if (!empty($msg)){
                             echo "
@@ -49,12 +47,23 @@ if (isset($_GET['msg'])){
                         }
                         ?>
                         <div class="brand-logo">
-                            <a href="login.php"><img src="images/logo.svg" alt="logo" /></a>
+                            <img src="images/logo.svg" alt="logo" />
                         </div>
-                        <h4>Đăng nhập quyền admin</h4>
-                        <form class="pt-3" method="post" action="action/action_login.php">
+                        <h4>Đăng ký tài khoản admin</h4>
+                        <form class="pt-3" action="action/action_register.php" method="post">
                             <div class="form-group">
-                                <label>Tài khoản</label>
+                                <label>Họ & tên của bạn</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend bg-transparent">
+                      <span class="input-group-text bg-transparent border-right-0">
+                        <i class="mdi mdi-account-outline text-primary"></i>
+                      </span>
+                                    </div>
+                                    <input type="text" name="name" class="form-control form-control-lg border-left-0" placeholder="Username" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Tài khoản Email</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend bg-transparent">
                       <span class="input-group-text bg-transparent border-right-0">
@@ -65,7 +74,7 @@ if (isset($_GET['msg'])){
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword">Mật khẩu</label>
+                                <label>Mật khẩu</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend bg-transparent">
                       <span class="input-group-text bg-transparent border-right-0">
@@ -75,22 +84,16 @@ if (isset($_GET['msg'])){
                                     <input type="password" name="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password" />
                                 </div>
                             </div>
-                            <div class="my-2 d-flex justify-content-between align-items-center">
-                                <div class="form-check">
-                                    <label class="form-check-label text-muted">
-                                        <input type="checkbox" class="form-check-input" />
-                                        Lưu đăng nhập
-                                    </label>
-                                </div>
-                                <a href="register.php" class="auth-link text-black" style="color: #0d4dff">Đăng ký tài khoản</a>
+                            <div class="mt-3">
+                                <input type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" value="Đăng ký">
                             </div>
-                            <div class="my-3">
-                                <input type="submit" name="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" value="Đăng nhập">
+                            <div class="text-center mt-4 font-weight-light">
+                                Bạn đã có tài khoản? <a href="login.php" class="text-primary">Đăng nhập</a>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-6 login-half-bg d-flex flex-row">
+                <div class="col-lg-6 register-half-bg d-flex flex-row">
                     <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2018  All rights reserved.</p>
                 </div>
             </div>

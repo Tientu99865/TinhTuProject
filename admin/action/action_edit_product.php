@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 //upload a image
 
-    if (isset($_FILES['image'])) {
+    if (!empty($_FILES['image']['name'])) {
         $file_name = $_FILES['image']['name'];
         $file_size = $_FILES['image']['size'];
         $file_tmp = $_FILES['image']['tmp_name'];
@@ -85,7 +85,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $q = "UPDATE products SET ";
         $q .= " cat_id = '{$cat_id}', ";
         $q .= " product_name = '{$p_name}', ";
+        if (!empty($_FILES['image']['name'])){
         $q .= " image = '{$_FILES['image']['name']}', ";
+        }
         $q .= " product_price = '{$product_price}', ";
         $q .= " selling_price = '{$selling_price}', ";
         $q .= " made_in = '{$made_in}', ";
@@ -97,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (mysqli_affected_rows($dbc) == 1) {
             $msg = " Sửa sản phẩm thành công.";
             $suc = 1;
+            header('Location: ../view_products.php?pid='.$pid.'&&'.'msg=' . $msg.'&&'.'suc='.$suc);
         } else {
             $msg = "Lỗi!Sản phẩm không thay đổi";
             $suc = 0;
@@ -104,9 +107,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         foreach ($errors as $error) {
             $msg .= $error . "<br/>";
+            header('Location: ../edit_product.php?pid='.$pid.'&&'.'msg=' . $msg.'&&'.'suc='.$suc);
         }
     }
-    header('Location: ../edit_product.php?pid='.$pid.'&&'.'msg=' . $msg.'&&'.'suc='.$suc);
+
 }
 
 ?>

@@ -19,13 +19,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         $errors[] = 'Làm ơn điền mật khẩu';
     }
     if (empty($errors)){
-        $q = " SELECT admin_account,admin_password FROM admin WHERE (admin_account = '$account' AND admin_password = '$password')";
+        $q = " SELECT admin_id,admin_name,admin_account,admin_password FROM admin WHERE (admin_account = '$account' AND admin_password = '$password')";
         $r = mysqli_query($dbc,$q);
         confirm_query($r,$q);
 
         if (mysqli_num_rows($r) == 1){
-            list($id,$account,$password) = mysqli_fetch_array($r,MYSQLI_NUM);
+            list($id,$name,$account,$password) = mysqli_fetch_array($r,MYSQLI_NUM);
             $_SESSION['admin_id'] = $id;
+            $_SESSION['admin_name'] = $name;
             $_SESSION['admin_account'] = $account;
             $_SESSION['admin_password'] = $password;
             $suc = 1;

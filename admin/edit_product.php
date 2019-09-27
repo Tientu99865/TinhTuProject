@@ -88,7 +88,7 @@ if (mysqli_num_rows($r) == 1){
                                 <label>Chọn ảnh cho sản phẩm<span style="color: red">*</span></label>
                                 <input type="file" name="image" class="file-upload-default">
                                 <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info"
+                                    <input type="text" value="<?php echo $prod['image']?>" class="form-control file-upload-info"
                                            disabled="" placeholder="...">
                                     <span class="input-group-append">
                           <button class="file-upload-browse btn btn-primary" type="button">Chọn ảnh</button>

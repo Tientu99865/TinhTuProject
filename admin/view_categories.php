@@ -66,7 +66,7 @@ if (isset($_GET['msg'])){
                                         <th class="jsgrid-header-cell jsgrid-control-field jsgrid-align-center"
                                             style="width: 50px;"><a href="add_category.php"><input
                                                     class="jsgrid-button jsgrid-mode-button jsgrid-insert-mode-button"
-                                                    type="button" title="Switch to inserting"></a></th>
+                                                    type="button" title="Thêm danh mục"></a></th>
                                     </tr>
                                 </table>
                             </div>
@@ -88,8 +88,8 @@ if (isset($_GET['msg'])){
                                             <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 100px;\">".$cats['position']."</td>
                                             <td class=\"jsgrid-cell jsgrid-control-field jsgrid-align-center\"
                                                 style=\"width: 50px;\">
-                                                <a href='edit_category.php?cid={$cats['cat_id']}'><input class=\"jsgrid-button jsgrid-edit-button\" type=\"button\" title=\"Edit\"></a>
-                                                <a href='delete_category.php?cid={$cats['cat_id']}'><input class=\"jsgrid-button jsgrid-delete-button\" type=\"button\" title=\"Delete\"></a>
+                                                <a href='edit_category.php?cid={$cats['cat_id']}'><input class=\"jsgrid-button jsgrid-edit-button\" type=\"button\" title=\"Sửa\"></a>
+                                                <a href='delete_category.php?cid={$cats['cat_id']}'><input class=\"jsgrid-button jsgrid-delete-button\" type=\"button\" title=\"Xóa\"></a>
                                             </td>
                                         </tr>
                                         ";

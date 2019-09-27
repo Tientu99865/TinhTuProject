@@ -86,7 +86,7 @@ if (isset($_GET['msg'])){
                                         <th class="jsgrid-header-cell jsgrid-control-field jsgrid-align-center"
                                             style="width: 50px;"><a href="add_product.php"><input
                                                     class="jsgrid-button jsgrid-mode-button jsgrid-insert-mode-button"
-                                                    type="button" title="Thêm"></a></th>
+                                                    type="button" title="Thêm sản phẩm"></a></th>
                                     </tr>
                                 </table>
                             </div>
