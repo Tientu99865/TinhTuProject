@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         $errors[] = 'Làm ơn điền mật khẩu với 6-20 ký tự';
     }
     if (empty($errors)){
-        $q = "INSERT INTO admin (admin_name,admin_account,admin_password) VALUE ('$name','$account',SHA1('$password'))";
+        $q = "INSERT INTO users (user_name,user_account,user_password,role_id) VALUE ('$name','$account',SHA1('$password'),'0')";
         $r = mysqli_query($dbc,$q);
         confirm_query($r,$q);
 

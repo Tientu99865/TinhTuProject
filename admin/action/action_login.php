@@ -19,16 +19,17 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         $errors[] = 'Làm ơn điền mật khẩu';
     }
     if (empty($errors)){
-        $q = " SELECT admin_id,admin_name,admin_account,admin_password FROM admin WHERE (admin_account = '$account' AND admin_password = '$password')";
+        $q = " SELECT user_id,user_name,user_account,user_password,role_id FROM users WHERE (user_account = '$account' AND user_password = SHA1('$password'))";
         $r = mysqli_query($dbc,$q);
         confirm_query($r,$q);
 
         if (mysqli_num_rows($r) == 1){
-            list($id,$name,$account,$password) = mysqli_fetch_array($r,MYSQLI_NUM);
-            $_SESSION['admin_id'] = $id;
-            $_SESSION['admin_name'] = $name;
-            $_SESSION['admin_account'] = $account;
-            $_SESSION['admin_password'] = $password;
+            list($id,$name,$account,$password,$role_id) = mysqli_fetch_array($r,MYSQLI_NUM);
+            $_SESSION['user_id'] = $id;
+            $_SESSION['user_name'] = $name;
+            $_SESSION['user_account'] = $account;
+            $_SESSION['user_password'] = $password;
+            $_SESSION['role_id'] = $role_id;
             $suc = 1;
         }else{
             $msg = "Tài khoản hoặc mật khẩu không đúng.";
@@ -40,7 +41,12 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         }
     }
     if ($suc == 1){
-        header('Location: ../admin_index.php');
+        if ($role_id != 0){
+            header('Location: ../admin_index.php');
+        }else{
+            header('Location: ../waiting.php');
+        }
+
     }else{
 
         header('Location: ../login.php?msg='.$msg);

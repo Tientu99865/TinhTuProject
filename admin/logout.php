@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ('../includes/functions.php');
-if(!isset($_SESSION['admin_id'])){
+if(!isset($_SESSION['user_id'])){
     header("Location: login.php");
 }else{
     $_SESSION = array();

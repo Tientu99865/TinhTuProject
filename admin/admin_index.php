@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
     include "check_login.php";
     include "admin_header.php";
     include "admin_navbar.php";
@@ -13,7 +13,7 @@ session_start();
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h1 style="text-align: center">Chào mừng <?php echo $_SESSION['admin_name']?> đến với trang chủ Admin</h1>
+                                <h1 style="text-align: center">Chào mừng bạn đến với trang chủ Admin</h1>
                             </div>
                         </div>
                     </div>

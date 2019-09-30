@@ -52,6 +52,12 @@
                     <li class="nav-item"><a class="nav-link" href="view_slides.php">Danh sách silde</a></li>
             </div>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="view_users.php">
+                <i class="mdi mdi-comment-account-outline menu-icon"></i>
+                <span class="menu-title">Danh sách tài khoản admin</span>
+            </a>
+        </li>
     </ul>
 </nav>
 <!-- partial -->

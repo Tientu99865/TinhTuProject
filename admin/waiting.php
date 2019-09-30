@@ -29,7 +29,7 @@
         <div class="content-wrapper d-flex align-items-center auth lock-full-bg">
             <div class="row w-100">
                 <div style="margin: auto;width: 1000px;height: 48px;border: 1px solid white;color: white">
-                    <h4 style="text-align: center;margin-top: 15px">Bạn đã đăng ký tài khoản admin thành công!!! Vui lòng chờ admin kiểm duyệt để bạn có thể sử dụng tài khoản này</h4>
+                    <h4 style="text-align: center;margin-top: 15px">Bạn đã đăng ký tài khoản thành công!!! Vui lòng chờ admin kiểm duyệt để bạn có thể sử dụng tài khoản này</h4>
                 </div>
                 <div class="col-lg-4 mx-auto">
                     <div class="auth-form-transparent text-left p-5 text-center">
