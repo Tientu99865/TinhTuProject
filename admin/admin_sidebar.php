@@ -58,6 +58,12 @@
                 <span class="menu-title">Danh sách tài khoản admin</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="view_roles.php">
+                <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+                <span class="menu-title">Quản lý chức vụ</span>
+            </a>
+        </li>
     </ul>
 </nav>
 <!-- partial -->

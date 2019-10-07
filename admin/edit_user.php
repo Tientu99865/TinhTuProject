@@ -78,7 +78,7 @@ if (mysqli_num_rows($r) == 1) {
                                 <select name="role_id" aria-controls="order-listing" class="form-control">
                                     <option>Chưa có chức vụ</option>
                                     <?php
-                                    $q = "SELECT * FROM permission";
+                                    $q = "SELECT * FROM roles";
                                     $r = mysqli_query($dbc,$q);
                                     confirm_query($r,$q);
 

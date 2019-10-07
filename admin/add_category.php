@@ -1,11 +1,18 @@
 <?php
 include "check_login.php";
+$account = $_SESSION['user_account'];
+$permission = 'add_category';
 include ('../includes/mysqli_connect.php');
 include ('../includes/functions.php');
+if (!has_permission($account,$permission)){
+    header('Location: view_categories.php');
+    exit;
+}
 include "admin_header.php";
 include "admin_navbar.php";
 include "admin_partial.php";
 include "admin_sidebar.php";
+
 
     if (isset($_GET['msg'])){
         $msg = $_GET['msg'];

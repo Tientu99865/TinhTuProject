@@ -45,8 +45,8 @@ include "admin_sidebar.php"
                                         <p>Bạn có muốn xóa danh mục <b><?php if (isset($cat_name)) echo $cat_name;?></b> không?</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <input type="submit" class="btn btn-danger" name="delete" value="Yes">
-                                        <input type="submit" class="btn btn-light" name="delete" value="No">
+                                        <input type="submit" class="btn btn-danger" name="delete" value="Xóa">
+                                        <input type="submit" class="btn btn-light" name="delete" value="Hủy">
                                     </div>
                                 </div>
                             </div>

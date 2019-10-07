@@ -1,5 +1,7 @@
 <?php
 include "check_login.php";
+$account = $_SESSION['user_account'];
+$permission = 'delete_user';
 include "admin_header.php";
 include "admin_navbar.php";
 include "admin_partial.php";
@@ -63,7 +65,7 @@ if (isset($_GET['msg'])){
                                             Chức vụ
                                         </th>
                                         <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 50px;">
-                                            Xóa
+                                            Sửa,Xóa
                                         </th>
                                     </tr>
                                 </table>
@@ -85,23 +87,28 @@ if (isset($_GET['msg'])){
                                             <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 120px;\">".$user['user_name']."</td>
                                             <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 150px;\">".$user['user_account']."</td>
                                             <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 100px;\">";
-                                        $q = "SELECT * FROM permission WHERE role_id = {$user['role_id']}";
+                                        $q = "SELECT * FROM roles WHERE role_id = {$user['role_id']}";
                                         $r = mysqli_query($dbc,$q);
                                         confirm_query($r,$q);
 
                                         $role = mysqli_fetch_array($r,MYSQLI_ASSOC);
 
-                                        if ($role['role_id'] != 0){
+                                        if ($role['role'] != 'User'){
                                             echo "<label class=\"badge badge-success\">{$role['role']}</label>";
                                         }else{
-                                            echo "<label class=\"badge badge-danger\">Đang chờ duyệt ...</label>";
+                                            echo "<label class=\"badge badge-danger\">{$role['role']}</label>";
                                         }
                                         echo "
                                             </td>
                                             <td class=\"jsgrid-cell jsgrid-control-field jsgrid-align-center\"
                                                 style=\"width: 50px;\">
-                                                <a href='edit_user.php?uid={$user['user_id']}'><input class=\"jsgrid-button jsgrid-edit-button\" type=\"button\" title=\"Sửa\"></a>
-                                                <a href=''><input class=\"jsgrid-button jsgrid-delete-button\" type=\"button\" title=\"Xóa\"></a>
+                                                <a href='edit_user.php?uid={$user['user_id']}'><input class=\"jsgrid-button jsgrid-edit-button\" type=\"button\" title=\"Sửa\"></a>";
+
+                                            if (has_permission($account,$permission)){
+                                                echo "<a href='delete_user.php?uid={$user['user_id']}''><input class=\"jsgrid-button jsgrid-delete-button\" type=\"button\" title=\"Xóa\"></a>";
+                                            }
+
+                                        echo "
                                             </td>
                                         </tr>
                                         ";

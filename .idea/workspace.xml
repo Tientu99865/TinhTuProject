@@ -3,13 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="b7157ecb-360f-4c6b-94f3-e5f9d9b67694" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/action/action_add_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/action/action_add_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/action/action_delete_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/action/action_delete_category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/action/action_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/action/action_login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/action/action_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/action/action_register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin_index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin_navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin_navbar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/admin_sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin_sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/check_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/check_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/waiting.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/waiting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/delete_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view_categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view_categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view_users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/functions.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,17 +37,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="12" />
-    <option name="width" value="651" />
-    <option name="height" value="698" />
-  </component>
   <component name="ProjectId" id="1RYuXu9CK7pGgA2iDcAPAGjCEff" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dautay" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -108,6 +108,10 @@
       <workItem from="1569826985621" duration="2694000" />
       <workItem from="1569855329815" duration="22000" />
       <workItem from="1569856402686" duration="8579000" />
+      <workItem from="1570032643455" duration="7402000" />
+      <workItem from="1570119121633" duration="5555000" />
+      <workItem from="1570201733672" duration="5116000" />
+      <workItem from="1570439038989" duration="4153000" />
     </task>
     <servers />
   </component>

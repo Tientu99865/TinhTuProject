@@ -41,7 +41,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         }
     }
     if ($suc == 1){
-        if ($role_id != 0){
+        $q = "SELECT * FROM users JOIN roles USING (role_id) WHERE user_account = '{$account}' AND permission LIKE '%login%'";
+        $r = mysqli_query($dbc,$q);
+        if (mysqli_num_rows($r) >= 1){
             header('Location: ../admin_index.php');
         }else{
             header('Location: ../waiting.php');

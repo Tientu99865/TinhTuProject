@@ -1,7 +1,10 @@
 <?php
 include "check_login.php";
 $account = $_SESSION['user_account'];
-$permission = 'add_category';
+$permission = 'delete_role';
+$permission1 = 'edit_role';
+$permission2 = 'add_role';
+
 include "admin_header.php";
 include "admin_navbar.php";
 include "admin_partial.php";
@@ -46,52 +49,63 @@ if (isset($_GET['msg'])){
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title" style="text-align: center;font-size: 30px;">Danh sách các danh mục</h4>
+                        <h4 class="card-title" style="text-align: center;font-size: 30px;">Danh sách chức vụ</h4>
                         <div id="js-grid" class="jsgrid" style="position: relative; height: 500px; width: 100%;">
                             <div class="jsgrid-grid-header jsgrid-header-scrollbar">
                                 <table class="jsgrid-table">
                                     <tr class="jsgrid-header-row">
-                                        <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 50px;">
+                                        <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 30px;">
                                             #
                                         </th>
                                         <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable"
-                                            style="width: 150px;">
-                                            Tên danh mục
+                                            style="width: 120px;">
+                                            Chức vụ
                                         </th>
-                                        <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 200px;">
-                                            Đường dẫn (URL)
+                                        <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 150px;">
+                                            Phân quyền
                                         </th>
-                                        <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable"
-                                            style="width: 100px;">
-                                            Vị trí
-                                        </th>
+
                                         <th class="jsgrid-header-cell jsgrid-control-field jsgrid-align-center"
-                                            style="width: 50px;"><a href="add_category.php"><input
-                                                    class="jsgrid-button jsgrid-mode-button jsgrid-insert-mode-button"
-                                                    type="button" title="Thêm danh mục"></a></th>
+                                            style="width: 50px;">
+                                            <?php
+                                            if (has_permission($account,$permission2)){
+                                                echo "<a href=\"add_role.php\"><input class=\"jsgrid-button jsgrid-mode-button jsgrid-insert-mode-button\" type=\"button\" title=\"Thêm chức vụ\"></a>";
+                                            }
+                                            ?>
+                                        </th>
                                     </tr>
                                 </table>
                             </div>
                             <div class="jsgrid-grid-body" style="height: 307.625px;">
+
                                 <table class="jsgrid-table">
                                     <tbody>
                                     <?php
-                                    $q = "SELECT * FROM categories ORDER BY cat_id ASC ";
-                                    $r = mysqli_query($dbc, $q);
-                                    confirm_query($r, $q);
+                                    $q1 = "SELECT * FROM roles ORDER BY role_id ASC ";
+                                    $r1 = mysqli_query($dbc, $q1);
+                                    confirm_query($r1, $q1);
                                     $stt=0;
-                                    while ($cats = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+                                    while ($role = mysqli_fetch_array($r1, MYSQLI_ASSOC)) {
+
                                         $stt+=1;
                                         echo "
                                         <tr class=\"jsgrid-row\">
-                                            <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 50px;\">".$stt."</td>
-                                            <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 150px;\">".$cats['cat_name']."</td>
-                                            <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 200px;\">".$cats['url']."</td>
-                                            <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 100px;\">".$cats['position']."</td>
+                                            <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 30px;\">".$stt."</td>
+                                            <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 120px;\">".$role['role']."</td>
+                                            <td class=\"jsgrid-cell jsgrid-align-center\" style=\"width: 150px;\">".$role['permission']."</td>
                                             <td class=\"jsgrid-cell jsgrid-control-field jsgrid-align-center\"
-                                                style=\"width: 50px;\">
-                                                <a href='edit_category.php?cid={$cats['cat_id']}'><input class=\"jsgrid-button jsgrid-edit-button\" type=\"button\" title=\"Sửa\"></a>
-                                                <a href='delete_category.php?cid={$cats['cat_id']}'><input class=\"jsgrid-button jsgrid-delete-button\" type=\"button\" title=\"Xóa\"></a>
+                                                style=\"width: 50px;\">";
+                                        if (has_permission($account,$permission1)){
+                                            echo "<a href='edit_role.php?rid={$role['role_id']}'><input class='jsgrid-button jsgrid-edit-button' type='button' title='Hủy'></a>";
+                                        }
+                                        if (has_permission($account,$permission)){
+                                            if ($role['role'] != 'User'){
+                                                echo "<a href='delete_role.php?rid={$role['role_id']}'><input class='jsgrid-button jsgrid-delete-button' type='button' title='Xóa'></a>";
+                                            }
+                                        }
+
+
+                                                echo "
                                             </td>
                                         </tr>
                                         ";
@@ -103,16 +117,16 @@ if (isset($_GET['msg'])){
                             </div>
                             <div class="jsgrid-pager-container">
                                 <div class="jsgrid-pager">Pages: <span
-                                            class="jsgrid-pager-nav-button jsgrid-pager-nav-inactive-button"><a
-                                                href="javascript:void(0);">First</a></span> <span
-                                            class="jsgrid-pager-nav-button jsgrid-pager-nav-inactive-button"><a
-                                                href="javascript:void(0);">Prev</a></span> <span
-                                            class="jsgrid-pager-page jsgrid-pager-current-page">1</span><span
-                                            class="jsgrid-pager-page"><a href="javascript:void(0);">2</a></span><span
-                                            class="jsgrid-pager-page"><a href="javascript:void(0);">3</a></span><span
-                                            class="jsgrid-pager-page"><a href="javascript:void(0);">4</a></span><span
-                                            class="jsgrid-pager-page"><a href="javascript:void(0);">5</a></span><span
-                                            class="jsgrid-pager-nav-button"><a href="javascript:void(0);">...</a></span>
+                                        class="jsgrid-pager-nav-button jsgrid-pager-nav-inactive-button"><a
+                                            href="javascript:void(0);">First</a></span> <span
+                                        class="jsgrid-pager-nav-button jsgrid-pager-nav-inactive-button"><a
+                                            href="javascript:void(0);">Prev</a></span> <span
+                                        class="jsgrid-pager-page jsgrid-pager-current-page">1</span><span
+                                        class="jsgrid-pager-page"><a href="javascript:void(0);">2</a></span><span
+                                        class="jsgrid-pager-page"><a href="javascript:void(0);">3</a></span><span
+                                        class="jsgrid-pager-page"><a href="javascript:void(0);">4</a></span><span
+                                        class="jsgrid-pager-page"><a href="javascript:void(0);">5</a></span><span
+                                        class="jsgrid-pager-nav-button"><a href="javascript:void(0);">...</a></span>
                                     <span class="jsgrid-pager-nav-button"><a href="javascript:void(0);">Next</a></span>
                                     <span class="jsgrid-pager-nav-button"><a href="javascript:void(0);">Last</a></span>
                                     &nbsp;&nbsp; 1 of 7
