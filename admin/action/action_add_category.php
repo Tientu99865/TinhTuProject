@@ -1,6 +1,13 @@
 <?php
+session_start();
+$account = $_SESSION['user_account'];
+$permission = 'add_category';
 include ('../../includes/mysqli_connect.php');
 include ('../../includes/functions.php');
+if (!has_permission($account,$permission)){
+    header('Location: ../view_categories.php');
+    exit;
+}
 $msg= '';
 $suc= '';
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
