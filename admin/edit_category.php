@@ -1,7 +1,14 @@
 <?php
 include "check_login.php";
+$account = $_SESSION['user_account'];
+$permission = 'edit_category';
 include ('../includes/mysqli_connect.php');
 include ('../includes/functions.php');
+if (!has_permission($account,$permission)){
+    $msg = "Bạn không có quyền để thực hiện tác vụ này";
+    header('Location: view_categories.php?msg='.$msg);
+    exit;
+}
 include "admin_header.php";
 include "admin_navbar.php";
 include "admin_partial.php";
