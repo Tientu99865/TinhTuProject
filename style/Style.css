@@ -64,7 +64,7 @@ table, th, td{
 	height: 50px;
 	float: left;
 	border: 0px;
-	background: url(Imgs/icon/search.png) no-repeat;
+	background: url(../Imgs/icon/search.png) no-repeat;
 	text-align: center;
 	outline: none;
 	margin-top: 10px;
