@@ -25,4 +25,4 @@
         <a href="Cart.html"><img src="Imgs/icon/cart-icon.png" alt=""></a>
         <strong>Your Cart</strong>
     </div>
-</div><!-- End Header -->
+</div>

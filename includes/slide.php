@@ -1,16 +1,20 @@
 <!-- Start building the Slide -->
+<?php
+    include_once "includes/mysqli_connect.php";
+?>
 <div class="slideshow-container">
-    <div class="mySlides">
-        <img src="Imgs/Slide/giay-sneaker-trang.jpg" style="width:1170px;height: 400px;">
-    </div>
+    <?php
+        $sql = "SELECT slide_image FROM slides ORDER BY post_on limit 3";
+        $result = mysqli_query($dbc, $sql);
+        while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            echo '
+            <div class="mySlides" style="display: block;">
+			  <img src="admin/uploads/slides/'.$rows['slide_image'].'" style="width:1170px;height: 400px;">
+			</div>
+			';
+        }
+    ?>
 
-    <div class="mySlides">
-        <img src="Imgs/Slide/home-banner.jpg" style="width:1170px;height: 400px;">
-    </div>
-
-    <div class="mySlides">
-        <img src="Imgs/Slide/realistic-sneakers-icon-set_91242-11.jpg" style="width:1170px;height: 400px;">
-    </div>
 </div><br>
 <!--.dot-->
 <div style="text-align:center">

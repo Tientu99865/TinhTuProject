@@ -16,15 +16,4 @@
         }
     }
 
-    function has_permission($account,$permission){
-        global $dbc;
-        $q = "SELECT * FROM users JOIN roles USING (role_id) WHERE user_account = '{$account}' AND permission LIKE '%{$permission}%'";
-        $r = mysqli_query($dbc,$q);
-        if (mysqli_num_rows($r) >= 1){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
 ?>
